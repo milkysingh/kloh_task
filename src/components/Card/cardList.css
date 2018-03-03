@@ -1,0 +1,21 @@
+.List {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+
+  list-style: none;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.ListItem {
+  padding: 1px;
+  text-align: center;
+
+  margin: 3px;
+}
+
+.ListItem:hover {
+  color: black;
+  box-shadow: 0px 2px rgb(116, 121, 116);
+}
