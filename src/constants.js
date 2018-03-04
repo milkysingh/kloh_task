@@ -1,6 +1,6 @@
 export const constants = {
   getActivityUrl:
-    "https://images.kloh.in/uid170913101630xspxjfbybbydbtrkcpmkg_img170913101630449lq6hvol8l5v6lxu4i1.png",
+    "https://api.kloh.in/kloh/external/v1/activity/list",
   coordinates: {
     location: {
       lat: 12.926031,

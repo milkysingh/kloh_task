@@ -1,6 +1,6 @@
 .List {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   flex-wrap: wrap;
 
   list-style: none;
@@ -9,7 +9,7 @@
 }
 
 .ListItem {
-  padding: 1px;
+  padding: 5px;
   text-align: center;
 
   margin: 3px;

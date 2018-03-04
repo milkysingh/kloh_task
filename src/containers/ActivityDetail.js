@@ -1,8 +1,15 @@
-import React, { Component } from "react";
-
+import React, { Component } from 'react';
+import axios from 'axios';
 class ActivityDetail extends Component {
+  async componentWillMount() {
+    const AID = this.props.match.params.id;
+    const { data: { response } } = await axios.get(
+      `https://api.kloh.in/kloh/external/v1/activity/${AID}`
+    );
+    console.log(response);
+  }
+
   render() {
-    console.log(this.props);
     return (
       <div
         id="carouselExampleControls"

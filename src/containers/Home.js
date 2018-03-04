@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-// import axios from "axios";
-import { constants } from "../constants";
-import CardList from "../components/Card/CardList";
-import Loader from "../components/Loader";
+import React, { Component } from 'react';
+import axios from 'axios';
+import { constants } from '../constants';
+import CardList from '../components/CardList';
+import Loader from '../components/Loader/index';
 class Home extends Component {
   state = {
     activities: [],
@@ -12,17 +12,17 @@ class Home extends Component {
   };
   async componentDidMount() {
     try {
-      //   const { response: { results } } = await axios.post(
-      //     constants.getActivityUrl,
-      //     constants.coordinates
-      //   );
-      setTimeout(() => {
-        this.setState({
-          activities: constants.mockData,
-          isFetching: false
-        });
-      }, 1000);
+      const { data: { response: { results } } } = await axios.post(
+        constants.getActivityUrl,
+        constants.coordinates
+      );
+
+      this.setState({
+        activities: results,
+        isFetching: false
+      });
     } catch (error) {
+      console.log('hello');
       this.setState({
         error: error,
         isFetching: false
@@ -30,7 +30,6 @@ class Home extends Component {
     }
   }
   render() {
-    console.log(this.state.activities);
     return (
       <div>
         <div className="jumbotron container-fluid">

@@ -1,9 +1,9 @@
-import React from "react";
-import HostImage from "./HostImage";
-import ActivityImage from "./ActivityImage";
-import Time from "./Time";
-import PropTypes from "prop-types";
+import React from 'react';
+import HostImage from '../HostImage';
+import ActivityImage from '../ActivityImage';
+import Time from '../Time';
 
+import ActivityPropType from '../../proptype';
 const Card = ({
   activity: {
     imageUrl,
@@ -14,14 +14,14 @@ const Card = ({
   }
 }) => {
   return (
-    <div className="card" style={{ width: "15rem" }}>
+    <div className="card" style={{ width: '15rem' }}>
       <ActivityImage activityImage={imageUrl} />
       <HostImage hostPic={ownerProfileImageUrl} />
       <div className="card-block">
         <h4 className="card-title">{title}</h4>
-        <p className="card-text">{description}</p>
+
         <Time time={activityDateString} />
-        <button type="button" className="btn btn-dark float-sm-right">
+        <button type="button" className="btn btn-success float-sm-right">
           Join
         </button>
       </div>
@@ -30,5 +30,5 @@ const Card = ({
 };
 export default Card;
 Card.propTypes = {
-  activity: PropTypes.object
+  activity: ActivityPropType.isRequired
 };
