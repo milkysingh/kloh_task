@@ -1,22 +1,15 @@
+import { PulseLoader } from 'react-spinners';
 import React from 'react';
+// eslint-disable-next-line
+import PropTypes from 'prop-types';
 import classes from './style.css';
-const Loader = () => {
-  return (
-    <div className={classes.loader}>
-      <div className="preloader-wrapper big active">
-        <div className="spinner-layer spinner-blue-only">
-          <div className="circle-clipper left">
-            <div className="circle" />
-          </div>
-          <div className="gap-patch">
-            <div className="circle" />
-          </div>
-          <div className="circle-clipper right">
-            <div className="circle" />
-          </div>
-        </div>
-      </div>
-    </div>
-  );
-};
+
+const Loader = ({ loading }) => (
+  <div className={classes.loader}>
+    <PulseLoader color="#123abc" loading={loading} />
+  </div>
+);
 export default Loader;
+Loader.propTypes = {
+  loading: PropTypes.bool.isRequired,
+};

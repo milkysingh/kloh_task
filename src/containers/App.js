@@ -1,7 +1,8 @@
-import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
-import ActivityDetail from "./ActivityDetail";
-import Home from "./Home";
+import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
+import ActivityDetail from './ActivityDetail';
+import Home from './Home';
+
 class App extends Component {
   render() {
     return (

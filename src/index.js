@@ -1,8 +1,7 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
-import App from "./containers/App";
-import registerServiceWorker from "./registerServiceWorker";
-
-ReactDOM.render(<App />, document.getElementById("root"));
-registerServiceWorker();
+import App from './containers/App';
+// eslint-disable-next-line
+ReactDOM.render(<App />, document.getElementById('root'));
