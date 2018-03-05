@@ -11,29 +11,25 @@ class Home extends Component {
     isFetching: true,
     error: null,
   };
-  componentDidMount() {
-    setTimeout(async () => {
-      try {
-        // eslint-disable-next-line
-        const { data: { response: { results } } } = await axios.post(
-          constants.getActivityUrl,
-          constants.coordinates,
-        );
-        // eslint-disable-next-line
-        this.setState({
-          activities: results,
-          isFetching: false,
-        });
-      } catch (error) {
-        // eslint-disable-next-line
-        this.setState({
-          error: 'Something went wring',
-          isFetching: false,
-        });
-      }
-    }, 2000);
+  async componentDidMount() {
+    try {
+      const { data: { response: { results } } } = await axios.post(
+        constants.getActivityUrl,
+        constants.coordinates,
+      );
+      // eslint-disable-next-line
+      this.setState({
+        activities: results,
+        isFetching: false,
+      });
+    } catch (error) {
+      // eslint-disable-next-line
+      this.setState({
+        error: 'Something went wring',
+        isFetching: false,
+      });
+    }
   }
-
   render() {
     if (this.state.isFetching) {
       return <Loader loading />;
